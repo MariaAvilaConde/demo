@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: nph-demo
+
+  r2dbc:
+    url: r2dbc:postgresql://ep-blue-dawn-adhdbe68-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_oEBM2yez9SUD
+    pool:
+      max-size: 8
+      min-size: 2
+      initial-size: 4
+      max-idle-time: 15m
+      max-life-time: 30m
+      max-acquire-time: 30s
+      max-create-connection-time: 20s
+      validation-query: SELECT 1
+      validation-depth: REMOTE
+    properties:
+      connectTimeout: 10000
+      reconnectAttempts: 3
+      reconnectInterval: 2000
+
+  # Security Configuration
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://securetoken.google.com/nph-demo
+
+# Logging Configuration
+logging:
+  level:
+    io.r2dbc: INFO
+    org.springframework.r2dbc: INFO
+    io.r2dbc.postgresql.client: DEBUG
+    org.springframework.security: DEBUG
+
+# Server Configuration
+server:
+  port: 8084
+
+# JWT Configuration
+jwt:
+  secret: AIzaSyBVrFr3madl_aH9mjL23buoYgGpJDX-xW8
+  expiration: 86400000  # 24 hours in milliseconds
+
+# Firebase Configuration
+firebase:
+  credentials-path: classpath:firebase-crede.json
+  project-id: proyect-b0d74
+  api-key: AIzaSyBVrFr3madl_aH9mjL23buoYgGpJDX-xW8
+
+# Management Endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - metrics
+          - prometheus
+
+  health:
+    db:
+      enabled: true
+    probes:
+      enabled: true

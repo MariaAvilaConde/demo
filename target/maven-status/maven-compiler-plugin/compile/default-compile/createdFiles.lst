@@ -1,0 +1,13 @@
+pe\edu\vallegrande\database\config\FirebaseConfig.class
+pe\edu\vallegrande\database\config\JwtTokenProvider.class
+pe\edu\vallegrande\database\config\JwtAuthenticationFilter.class
+pe\edu\vallegrande\database\service\FirebaseAuthService.class
+pe\edu\vallegrande\database\repository\UserRepository.class
+pe\edu\vallegrande\database\config\SecurityConfig.class
+pe\edu\vallegrande\database\modal\User.class
+pe\edu\vallegrande\database\controller\AuthController.class
+pe\edu\vallegrande\database\DatabaseApplication.class
+pe\edu\vallegrande\database\dto\UserDTO.class
+pe\edu\vallegrande\database\dto\JwtResponseDTO.class
+pe\edu\vallegrande\database\service\UserService.class
+pe\edu\vallegrande\database\dto\AuthRequestDTO.class
